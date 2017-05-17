@@ -78,20 +78,20 @@ namespace ListNumber {
 				}
 
 				// Process that calls the requested methods Add() and Multiply()
-				switch (listOperator) {
-					case ADD_OPERATOR:
-						List<int> result = Add(lnA._listNumber, lnB._listNumber);
-						ListNumberType ln = new ListNumberType(result);
-						Console.WriteLine(ln);
-						break;
-					case MULTIPLY_OPERATOR:
-						result = Multiply(lnA._listNumber, lnB._listNumber);
-						ln = new ListNumberType(result);
-						Console.WriteLine(ln);
-						break;
-					default:
-						break;
-				}
+				//switch (listOperator) {
+				//	case ADD_OPERATOR:
+				//		List<int> result = Add(lnA._listNumber, lnB._listNumber);
+				//		ListNumberType ln = new ListNumberType(result);
+				//		Console.WriteLine(ln);
+				//		break;
+				//	case MULTIPLY_OPERATOR:
+				//		result = Multiply(lnA._listNumber, lnB._listNumber);
+				//		ln = new ListNumberType(result);
+				//		Console.WriteLine(ln);
+				//		break;
+				//	default:
+				//		break;
+				//}
 			}
 			Console.WriteLine();
 			Console.WriteLine("by Noel Tiangco. Press [Enter] to end.");
