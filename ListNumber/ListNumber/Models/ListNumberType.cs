@@ -9,19 +9,26 @@ namespace ListNumber.Models {
 		public List<int> _listNumber;
 
 		/// <summary>
-		/// listString assumes the format 1->3->2->4, which represents a value of 4231"
+		/// listString assumes the format of "1->3->2->4", which represents a value of 4231"
 		/// </summary>
 		/// <param name="listString"></param>
 		public ListNumberType(string listString) {
-			try {
-				string[] numberArray = listString.Split(new string[] { "->" }, StringSplitOptions.None);
-				_listNumber = Array.ConvertAll(numberArray, Int32.Parse).ToList();
-
-				Array.Reverse(numberArray);
-				_value = int.Parse(string.Join(string.Empty, numberArray));
+			// special initialize case
+			if (string.IsNullOrWhiteSpace(listString)) {
+				_listNumber = new List<int>();
+				_value = 0;
 			}
-			catch (Exception) {
-				throw;
+			else {
+				try {
+					string[] numberArray = listString.Split(new string[] { "->" }, StringSplitOptions.None);
+					_listNumber = Array.ConvertAll(numberArray, Int32.Parse).ToList();
+
+					Array.Reverse(numberArray);
+					_value = int.Parse(string.Join(string.Empty, numberArray));
+				}
+				catch (Exception) {
+					throw;
+				}
 			}
 		}
 
@@ -37,6 +44,10 @@ namespace ListNumber.Models {
 			}
 		}
 
+		/// <summary>
+		/// list number is a List of integers in least significant to most significant order
+		/// </summary>
+		/// <param name="listNumber"></param>
 		public ListNumberType(List<int> listNumber) {
 			try {
 				_listNumber = listNumber;
@@ -60,7 +71,7 @@ namespace ListNumber.Models {
 		}
 
 		public override string ToString() {
-			return string.Join("=>", _listNumber);
+			return string.Join("->", _listNumber);
 		}
 
 	}
