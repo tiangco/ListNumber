@@ -57,12 +57,12 @@ namespace ListNumber {
 
 			if (!isValid) {
 				Console.WriteLine("Usage:");
-				Console.WriteLine($" LineNumber {LISTOPERATOR_PARAMETER}(operator) {OPERANDS_PARAMETER}(operands)");
+				Console.WriteLine($" ListNumber {LISTOPERATOR_PARAMETER}(operator) {OPERANDS_PARAMETER}(operands)");
 				Console.WriteLine($"       operator  Valid values are 'add' or 'multiply'.");
 				Console.WriteLine($"       operands  Two lists separated by a comma. A list is of the format 'n[->n]...' where n is a digit from 0-9");
 				Console.WriteLine($"                 Note: Important Enclose the argument in quotes.");
 				Console.WriteLine();
-				Console.WriteLine($"Example: LineNumber {LISTOPERATOR_PARAMETER}add {OPERANDS_PARAMETER}'1->2->3,8->7'");
+				Console.WriteLine($"Example: ListNumber {LISTOPERATOR_PARAMETER}add {OPERANDS_PARAMETER}'1->2->3,8->7'");
 			}
 			else {
 				// Process that uses operator overrides
